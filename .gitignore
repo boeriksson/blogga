@@ -1,0 +1,15 @@
+.idea
+.DS_Store
+
+node_modules/
+npm-debug.log
+*.iml
+blogga_client/node_modules/
+blogga_client/dist/
+blogga_client/test/
+blogga_server/node_modules/
+blogga_server/test/
+blogga_server/*.iml
+
+
+
