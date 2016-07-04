@@ -1,5 +1,6 @@
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
+const ExtractText = require('extract-text-webpack-plugin');
 
 module.exports = {
     context: __dirname,
@@ -24,8 +25,12 @@ module.exports = {
                 test: /\.json$/, loader: 'json'
             },
             {
-                test: /\.styl$/,
+                test: /\.css$/,
                 loader: 'style!css?sourceMap!stylus'
+            },
+            {
+                test: /\.styl$/,
+                loader: ExtractText.extract('css', 'css?sourceMap!stylus')
             }
         ]
     },
@@ -34,9 +39,11 @@ module.exports = {
     },
     output: {
         path: __dirname + '/dist',
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: 'http://localhost:8080/'
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new ExtractText('styles.css', { allChunks: true })
     ]
 };

@@ -6,10 +6,10 @@ export default React.createClass({
         return (
             <div className="blog">
                 <nav></nav>
-                <main>
-                    <aside></aside>
-                    <article></article>
-                    <aside></aside>
+                <main className="main">
+                    <aside className="contentTree">aside3</aside>
+                    <article className="article">article</article>
+                    <aside className="rightColumn">aside2</aside>
                 </main>
                 <footer></footer>
             </div>

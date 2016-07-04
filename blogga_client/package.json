@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js \"test/**/*@(.js|.jsx)\"",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "build": "npm run copy && webpack --colors",
+    "precopy": "rm -rf ./dist && mkdir -p dist",
+    "copy": "cp src/index.html dist/"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +24,7 @@
     "chai-immutable": "^1.5.4",
     "dirty-chai": "^1.2.2",
     "enzyme": "^2.2.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "jsdom": "^8.1.0",
     "mocha": "^2.4.5",
@@ -28,8 +32,8 @@
     "react-redux": "^4.4.2",
     "react-router": "^2.1.0",
     "sinon": "^1.17.3",
-    "stylus": "^0.54.2",
-    "stylus-loader": "^2.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.1.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
