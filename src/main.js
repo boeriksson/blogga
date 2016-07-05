@@ -5,6 +5,7 @@ import { Router, Route, browserHistory } from 'react-router';
 
 import Blog from './components/blog.jsx'
 import Store from './store';
+import './styles/styles.styl';
 
 const render = () => {
     ReactDOM.render(
