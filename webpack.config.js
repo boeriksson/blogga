@@ -1,4 +1,4 @@
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
@@ -17,11 +17,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
       },
       {
         test: /\.styl$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader!stylus-loader")
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader')
       }
     ]
   },
@@ -33,9 +33,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin("styles.css", {
+    new ExtractTextPlugin('styles.css', {
       allChunks: true
     }),
     new webpack.HotModuleReplacementPlugin()
   ]
-}
+};
