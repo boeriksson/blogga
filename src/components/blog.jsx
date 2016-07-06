@@ -1,17 +1,18 @@
 import React from 'react';
+import './blog.styl';
 
 export default React.createClass({
     render: function () {
         console.log('Render blog.jsx');
         return (
             <div className="blog">
-                <nav></nav>
-                <main className="main">
-                    <aside className="contentTree">aside3</aside>
+                <header>header</header>
+                <main id="main">
+                    <nav className="contentTree">nav</nav>
                     <article className="article">article</article>
-                    <aside className="rightColumn">aside2</aside>
+                    <aside className="rightColumn">aside</aside>
                 </main>
-                <footer></footer>
+                <footer>footer</footer>
             </div>
         );
     }

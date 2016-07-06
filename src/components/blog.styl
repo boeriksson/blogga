@@ -2,26 +2,80 @@ footer {
   background: '#222222';
 }
 
-.main {
+.blog {
   display: flex;
-  flex-direction: row;
-}
+  flex-direction: column;
 
-.contentTree {
-  flex-basis: 15%;
-  flex-grow: 1;
-  background-color: green;
-}
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  min-height: 600px;
 
-.article {
-  flex-grow: 3;
-  flex-basis: 65%;
-  background-color: blue;
-}
+  #main {
+    flex 1 1 auto;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-flow: row;
+  }
 
-.rightColumn {
-  flex-grow: 1;
-  flex-basis: 20%;
-  background-color: deeppink;
+  #main > nav {
+    margin: 2px;
+    padding: 2px;
+    border: 1px solid #8888bb;
+    border-radius: 2pt;
+    background: #ccccff;
+    flex: 1 6 20%;
+    order: 1;
+  }
+
+  #main > article {
+    margin: 2px;
+    padding: 2px;
+    border: 1px solid #cccc33;
+    border-radius: 2pt;
+    background: #dddd88;
+    flex: 3 1 60%;
+    order: 2;
+  }
+
+  #main > aside {
+    margin: 2px;
+    padding: 2px;
+    border: 1px solid #8888bb;
+    border-radius: 2pt;
+    background: #ccccff;
+    flex: 1 6 20%;
+    order: 3;
+  }
+
+  header, footer {
+    display: block;
+    margin: 2px;
+    padding: 2px;
+    min-height: 30px;
+    border: 1px solid #eebb55;
+    border-radius: 2pt;
+    background: #ffeebb;
+  }
+
+  /* Too narrow to support three columns */
+  @media all and (max-width: 640px) {
+    #main, #page {
+      flex-direction: column;
+    }
+
+    #main > article, #main > nav, #main > aside {
+      /* Return them to document order */
+      order: 0;
+    }
+
+    #main > nav, #main > aside, header, footer {
+      min-height: 50px;
+      max-height: 50px;
+    }
+  }
 }
 
