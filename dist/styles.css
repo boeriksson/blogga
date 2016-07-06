@@ -4,8 +4,6 @@ footer {
 .blog {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
   align-items: stretch;
   align-content: stretch;
   min-height: 600px;
@@ -13,11 +11,12 @@ footer {
 }
 .blog #main {
   flex: 1 1 auto;
-  height: 100%;
   margin: 0px;
   padding: 0px;
   display: flex;
-  flex-flow: row;
+  flex-direction: row;
+  align-items: stretch;
+  align-content: stretch;
 }
 .blog #main > nav {
   margin: 2px;
@@ -55,6 +54,7 @@ footer {
   border: 1px solid #eb5;
   border-radius: 2pt;
   background: #feb;
+  flex: 0 0 30px;
 }
 @media all and (max-width: 640px) {
   .blog #main,

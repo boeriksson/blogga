@@ -5,20 +5,17 @@ footer {
 .blog {
   display: flex;
   flex-direction: column;
-
-  flex-wrap: nowrap;
-  justify-content: flex-start;
   align-items: stretch;
   align-content: stretch;
   min-height: 600px;
 
   #main {
     flex 1 1 auto;
-    height: 100%;
     margin: 0px;
     padding: 0px;
     display: flex;
-    flex-flow: row;
+    flex-direction: row;
+    align-items: stretch;
     align-content: stretch;
   }
 
@@ -60,6 +57,7 @@ footer {
     border: 1px solid #eebb55;
     border-radius: 2pt;
     background: #ffeebb;
+    flex: 0 0 30px;
   }
 
   /* Too narrow to support three columns */

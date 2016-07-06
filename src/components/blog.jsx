@@ -2,7 +2,8 @@ import React from 'react';
 import './blog.styl';
 
 export default React.createClass({
-  render: (
+  render() {
+    return (
       <div className="blog">
         <header>header</header>
         <main id="main">
@@ -12,5 +13,6 @@ export default React.createClass({
         </main>
         <footer>footer</footer>
       </div>
-  )
+    )
+  }
 });
